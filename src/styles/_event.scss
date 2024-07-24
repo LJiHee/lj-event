@@ -1,8 +1,6 @@
 @use 'variables';
 
 .event {
-
-
      &--informacoes {
           background-image: linear-gradient(90deg, variables.$purple1, variables.$purple2);
           padding-top: 80px;
@@ -15,20 +13,18 @@
           padding-bottom: 50px;
      }
 
-     &--image-left {
-          .container {
-               flex-direction: row-reverse;
-          }
-     }
-
      .container {
           display: flex;
+          flex-wrap: wrap;
           gap: 80px;
      }
 
      &__image {
           max-width: 405px;
           border-radius: 20px;
+          height: auto;
+          display: flex;
+          justify-content: center;
 
           &__restaurante {
                width: 100%;
@@ -65,17 +61,62 @@
           }
 
           @media (max-width: 640px) {
-               .container {
-                    display: block;
-               }
+               .event {
+                    &__image {
+                         width: 100%;
+                         height: 220px;
 
-               &__image {
-                    width: 100%;
-               }
+                         &__restaurante {
+                              width: 100%;
+                              height: 220px;
+                         }
+                    }
 
-               &__details {
-                    margin-right: 0;
-                    margin-bottom: 16px;
+                    &__details {
+                         &__title {
+                              font-size: 22px;
+                              font-weight: bold;
+                              margin-bottom: 18px;
+                              padding-bottom: 19px;
+                              margin-top: -48px;
+                         }
+
+                         &__description {
+                              line-height: 32px;
+                              margin-bottom: 10px;
+                         }
+
+                         &__images {
+                              display: block;
+                              margin-top: 30px;
+                              margin-bottom: -10px;
+                         }
+
+                    }
+
+                    @media (max-width: 1024px) {
+                         &__image {
+                              width: 100%;
+                         }
+
+                         &__description {
+                              line-height: 30px;
+                         }
+
+                         &__images {
+                              display: flex;
+                              justify-content: space-between;
+                              gap: 20px;
+                         }
+
+                         &__title {
+                              font-size: 22px;
+                              font-weight: bold;
+                              margin-bottom: 15px;
+                              padding-bottom: 20px;
+                              border-bottom: solid 2px #fff;
+                         }
+                    }
                }
           }
      }
