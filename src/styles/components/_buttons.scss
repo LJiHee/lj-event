@@ -7,10 +7,11 @@
      text-decoration: none;
      text-align: center;
      white-space: nowrap;
+     color: #fff;
+     background-color: variables.$purple1;
 
-     &--primary {
-          color: #fff;
-          background-color: variables.$purple1;
+     &:hover {
+          background-color: darken(variables.$purple1, 15%);
      }
 
      @media (max-width: 640px) {
